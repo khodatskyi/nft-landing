@@ -1,0 +1,15 @@
+<div class="container">
+  <p>ROADMAP</p>
+  <h1>Our Journey</h1>
+  <div class="roadmap-cards-container">
+    <div class="card" *ngFor="let card of getRoadMapCardsCollection()">
+      <div class="card__data">
+        <p>{{ card.year }}</p>
+        <p>{{ card.month }}</p>
+      </div>
+      <div class="card__title">
+        <h2>{{ card.title }}</h2>
+      </div>
+    </div>
+  </div>
+</div>

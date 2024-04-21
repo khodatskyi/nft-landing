@@ -1,0 +1,40 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+$primary-linear-background-color: linear-gradient(
+  to right,
+  rgb(29, 52, 58),
+  rgb(54, 75, 81)
+);
+$gray-to-white-linear-background-color: linear-gradient(
+  to right,
+  rgb(203, 203, 203),
+  rgb(233, 233, 233)
+);
+$button-linear-background-color: linear-gradient(
+  to right,
+  rgb(34, 58, 62),
+  rgb(112, 164, 155)
+);
+
+$white-to-gray-linear-color: linear-gradient(
+  to right,
+  rgb(118, 129, 132),
+  rgb(61, 80, 86)
+);
+
+$primary-background-color: rgba(29, 52, 58, 255);
+$primary-lighten-background-color: lighten($primary-background-color, 10%);
+$second-background-color: rgba(236, 246, 239, 255);
+$black-font-color: rgb(0, 0, 0);
+$lime-font-color: #c5fec5;
+$white-font-color: rgb(240, 255, 243);
+$gray-font-color: rgb(139, 150, 152);
+
+body {
+  font-family: sans-serif;
+}
+

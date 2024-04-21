@@ -1,0 +1,160 @@
+@import "../../../../styles.scss";
+
+.container {
+  padding: 20px 120px 0 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: $second-background-color;
+
+  .container-cards {
+    width: 100%;
+
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+
+    .card {
+      flex: 1;
+      max-width: 450px;
+      height: 500px;
+      text-align: center;
+      border: 1px solid $black-font-color;
+      border-radius: 20px;
+      color: $black-font-color;
+      background-color: transparent;
+      transition: background-color 0.2s ease, box-shadow 0.2s ease;
+
+      .card__title {
+        padding: 25px;
+        height: 90px;
+      }
+
+      .card__price {
+        background: $primary-linear-background-color;
+        padding: 20px;
+        color: $second-background-color;
+        font-size: 3rem;
+      }
+
+      .card__advantages {
+        padding: 10px;
+        line-height: 40px;
+        font-size: 1rem;
+
+        ul {
+          list-style: none;
+        }
+        li span {
+          margin-right: 1em;
+        }
+      }
+
+      .card__button {
+        display: none;
+        height: 200px;
+
+        button {
+          margin-top: 30px;
+          width: 75%;
+          padding: 20px;
+          font-size: 1.3rem;
+          background: $lime-font-color;
+          color: $primary-background-color;
+          font-weight: 500;
+          border: 1px solid $black-font-color;
+          border-radius: 10px;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      h3 {
+        font-size: 2rem;
+      }
+
+      &:hover {
+        background: $primary-linear-background-color;
+        color: $second-background-color;
+        height: 600px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+        transition-delay: 0.1s;
+
+        .card__price {
+          background: $white-to-gray-linear-color;
+        }
+
+        .card__button {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .container {
+    padding: 10px 60px 0 60px;
+  }
+}
+@media (max-width: 960px) {
+  .container {
+    .container-cards {
+      height: 500px;
+      .card {
+        height: 430px;
+
+        .card__advantages {
+          font-size: 0.8rem;
+          line-height: 30px;
+        }
+
+        .card__button {
+          height: 100px;
+
+          button {
+            margin-top: 5px;
+            width: 75%;
+            padding: 10px;
+            font-size: 1rem;
+          }
+        }
+
+        &:hover {
+          height: 500px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    .container-cards {
+      height: 100%;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+
+      .card {
+        .card__advantages {
+          font-size: 1.1rem;
+          line-height: 30px;
+        }
+        .card__button {
+          display: block;
+
+          button {
+            margin-top: 20px;
+            padding: 15px;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}

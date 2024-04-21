@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="container-info">
+    <div class="container-info__title">
+      <p>CREATORS</p>
+      <h1>
+        Top Creators <br />
+        of this Month
+      </h1>
+    </div>
+    <a href="#">See all Featured Creators</a>
+  </div>
+  <div class="container-creators">
+    <div
+      class="container-creators__card"
+      *ngFor="let card of creatorsCollection()"
+    >
+      <div class="card__info">
+        <div class="card__info--creator">
+          <img
+            src="https://images.unsplash.com/photo-1457449940276-e8deed18bfff?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="photo_profile"
+          />
+        </div>
+        <p>{{ card.creator }}</p>
+        <a href="/artworks">Explore Artworks</a>
+      </div>
+      <div class="card__photo">
+        <div class="card__photo--left">
+          <img [src]="card.img[0]" alt="" />
+        </div>
+        <div class="card__photo--right">
+          <div class="card__photo--right_up">
+            <img [src]="card.img[1]" alt="" />
+          </div>
+          <div class="card__photo--right_down">
+            <img [src]="card.img[2]" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

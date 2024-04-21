@@ -1,0 +1,24 @@
+<div class="container">
+  <app-breadcrumbs></app-breadcrumbs>
+  <h1>Explore artworks</h1>
+  <div class="category-container">
+    <app-filtration
+      (sortingMethodChanged)="sortChanged($event)"
+    ></app-filtration>
+  </div>
+  <div class="cards-container">
+    <div class="card" *ngFor="let card of displayedCards">
+      <div class="card-img">
+        <img [src]="card.img" alt="" />
+      </div>
+      <div class="card-description">
+        <h2>{{ card.title }}</h2>
+        <p>{{ card.price }}</p>
+        <button (click)="addItemToCard(card)">Bid Now</button>
+      </div>
+    </div>
+  </div>
+  <div class="pagination-container">
+    <app-pagination (pageChanged)="onPageChanged($event)"></app-pagination>
+  </div>
+</div>

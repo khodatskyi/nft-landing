@@ -1,0 +1,78 @@
+<div class="container" [ngClass]="{ hidden: isSmallScreen }">
+  <div class="container__left">
+    <a href="/home">lockGems</a>
+    <a href="/about">About</a>
+    <a href="/artworks">Artworks</a>
+    <a href="/membership">Membership</a>
+    <a href="/contact">Contact</a>
+  </div>
+  <div class="container__right">
+    <p
+      style="color: aliceblue; font-weight: 600"
+      *ngIf="totalSumOfItemsInCart > 0"
+    >
+      Total Price - {{ totalSumOfItemsInCart }}
+    </p>
+    <div class="image-container" (click)="toggleCart()">
+      <img
+        src="../../assets/shopping-cart-black.png"
+        alt="shopping-cart"
+        class="static-image"
+      />
+      <img
+        src="../../assets/shopping-cart.gif"
+        alt="trash"
+        class="animated-image"
+      />
+      <p>{{ this.quantityItemsInCartNumber }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="container" [ngClass]="{ hidden: !isSmallScreen }">
+  <div
+    class="menu"
+    id="menu"
+    [class.openmenu]="isOpen"
+    (click)="toggleMenu()"
+    [ngClass]="{ hidden: !isSmallScreen }"
+  >
+    <div>
+      <span class="line-1"></span>
+      <span class="line-2"></span>
+      <span class="line-3"></span>
+    </div>
+    <!-- *ngIf="this.isOpen" -->
+    <div class="menu-burger" [ngClass]="{ open: isOpen, closed: !isOpen }">
+      <a href="/home">lockGems</a>
+      <a href="/about">About</a>
+      <a href="/artworks">Artworks</a>
+      <a href="/membership">Membership</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+  <!-- <div class="container__right">
+    <button (click)="toggleCart()">Cart</button>
+  </div> -->
+  <div class="container__right">
+    <p
+      style="color: aliceblue; font-weight: 600"
+      *ngIf="totalSumOfItemsInCart > 0"
+    >
+      Total Price - {{ totalSumOfItemsInCart }}
+    </p>
+    <div class="image-container" (click)="toggleCart()">
+      <img
+        src="../../assets/shopping-cart-black.png"
+        alt="shopping-cart"
+        class="static-image"
+      />
+      <img
+        src="../../assets/shopping-cart.gif"
+        alt="trash"
+        class="animated-image"
+      />
+      <p>{{ this.quantityItemsInCartNumber }}</p>
+    </div>
+  </div>
+</div>

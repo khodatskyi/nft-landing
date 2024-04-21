@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="container__title">
+    <h1>Get in touch</h1>
+    <p>You can reach us anytime</p>
+  </div>
+
+  <div class="container__form">
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+      <div class="form__name">
+        <div class="hint hint-first-name" *ngIf="firstNameInvalid">
+          <p>{{ userFirstNameTip }}</p>
+        </div>
+        <input
+          type="text"
+          pattern="[A-Za-zА-Яа-яЁё\s]{2,50}"
+          placeholder="First name"
+          name="firstName"
+          ngModel
+          [(ngModel)]="userFirstName"
+          (input)="onNameInput()"
+          required
+        />
+        <div class="hint hint-last-name" *ngIf="lastNameInvalid">
+          <p>{{ userLastNameTip }}</p>
+        </div>
+        <input
+          type="text"
+          pattern="[A-Za-zА-Яа-яЁё\s]{2,50}"
+          placeholder="Last name"
+          name="lastName"
+          ngModel
+          [(ngModel)]="userLastName"
+          (input)="onLastNameInput()"
+          required
+        />
+      </div>
+      <div class="hint hint-email" *ngIf="emailInvalid">
+        <p>{{ emailTip }}</p>
+      </div>
+      <input
+        type="email"
+        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+        placeholder="Your Email"
+        name="email"
+        ngModel
+        [(ngModel)]="userEmail"
+        (input)="onEmailInput()"
+        required
+      />
+      <div class="hint hint-phone" *ngIf="phoneInvalid">
+        <p>{{ phoneTip }}</p>
+      </div>
+      <input
+        type="tel"
+        placeholder="Phone number"
+        pattern="[0-9]{9,12}"
+        name="phone"
+        ngModel
+        [(ngModel)]="userPhone"
+        (input)="onPhoneInput()"
+        required
+      />
+      <textarea
+        cols="30"
+        rows="10"
+        placeholder="How can we help?"
+        name="message"
+        ngModel
+        required
+      ></textarea>
+      <button type="submit" [disabled]="!myForm.valid">Submit</button>
+      <p>
+        Lorem ipsum dolor sit amet consectetur <br />
+        adipisicing elit. Incidunt, quisquam?
+      </p>
+    </form>
+  </div>
+</div>

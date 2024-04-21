@@ -1,0 +1,39 @@
+@import "../../../../styles.scss";
+
+.pagination-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+
+  button {
+    width: 50px;
+    height: 50px;
+    background: $primary-background-color;
+    color: $second-background-color;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      background: $primary-lighten-background-color;
+    }
+  }
+
+  .button-prev-next {
+    width: 100px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .pagination-container {
+    button {
+      width: 50px;
+      height: 30px;
+      font-size: 0.8rem;
+    }
+  }
+}
+

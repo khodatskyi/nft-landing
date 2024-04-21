@@ -1,0 +1,43 @@
+@import "../../../../styles.scss";
+
+.container {
+  background: $second-background-color;
+  padding: 50px 0px;
+  overflow: hidden;
+  .logo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+    svg {
+      margin: 0 20px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .container .logo-container {
+    animation: marquee-slim 30s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-66%);
+  }
+}
+
+@keyframes marquee-slim {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-240%);
+  }
+}

@@ -1,0 +1,75 @@
+@import "../../../../styles.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+
+  div {
+    width: 100%;
+
+    img {
+      height: 40px;
+    }
+  }
+
+  h1 {
+    margin: 20px 0;
+  }
+
+  .question {
+    display: flex;
+    // flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: $primary-background-color;
+    color: $second-background-color;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+
+    &:hover {
+      background: $primary-lighten-background-color;
+    }
+  }
+
+  .answer {
+    padding: 15px;
+    border-radius: 10px;
+    color: $white-font-color;
+    background: $primary-linear-background-color;
+    font-size: 1rem;
+    opacity: 0;
+    height: 0px;
+    overflow: hidden;
+    transition: height 1s ease-out, opacity 0.3s ease-out;
+  }
+
+  .open {
+    opacity: 1;
+    height: 40px;
+  }
+}
+
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(180deg); }
+}
+
+@keyframes rotateBack {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(180deg); }
+}
+
+/* Применение анимации */
+.rotate {
+  animation: rotate 1s ease-in-out forwards;
+}
+
+.rotate-back {
+  animation: rotateBack 1s ease-in-out forwards;
+}

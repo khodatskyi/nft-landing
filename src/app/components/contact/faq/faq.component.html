@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>FAQ</h1>
+  <div *ngFor="let faqItem of faqItems; let i = index">
+    <div class="question" (click)="toggleAnswer(i)">
+      {{ faqItem.question }}
+      <img
+        *ngIf="this.faqItems[i].expanded"
+        src="../../../../assets/drop-up.png"
+        [class.rotate]="this.faqItems[i].expanded"
+      />
+      <img
+        *ngIf="!this.faqItems[i].expanded"
+        src="../../../../assets/drop-downpng.png"
+        [class.rotate-back]="!this.faqItems[i].expanded"
+      />
+    </div>
+    <div class="answer" [ngClass]="{ open: faqItem.expanded }">
+      {{ faqItem.answer }}
+    </div>
+  </div>
+</div>

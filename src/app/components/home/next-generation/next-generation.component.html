@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="container__left">
+    <div class="container__info">
+      <h1>
+        Next Generation <br />
+        of <span>Digital Arts</span>
+      </h1>
+      <p>
+        Experience the fusion of artistic talent and cutting-edge technology,
+        <br />
+        as we showcase the best in NFT artistry and digital arts innovation
+      </p>
+      <a href="/artworks">Explore Artworks</a>
+    </div>
+    <div class="statistic-info__container">
+      <div class="statistic-info__box">
+        <p class="statistic-info__box--title">10 000+</p>
+        <p class="statistic-info__box--description">NFT Artworks sold</p>
+      </div>
+      <div class="statistic-info__box">
+        <p class="statistic-info__box--title">5M+</p>
+        <p class="statistic-info__box--description">in Transaction</p>
+      </div>
+      <div class="statistic-info__box">
+        <p class="statistic-info__box--title">90%</p>
+        <p class="statistic-info__box--description">Customer Satisfaction</p>
+      </div>
+    </div>
+  </div>
+  <div class="container__right">
+    <div class="card">
+      <div class="card__imgBx">
+        <div class="imgBx__info">
+          <h3>Tiny Island Manifesto</h3>
+          <div class="imgBx__info--description">
+            <h4>Moonlight Scenery</h4>
+            <h4>Price</h4>
+          </div>
+        </div>
+        <button (click)="clickOnNotifyButton()">Notify me</button>
+      </div>
+
+      <div class="card__content">
+        <div class="square">
+          <h2>Remaining Time</h2>
+          <p>{{ timeToMidnight | date : "HH:mm:ss" }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
+</div>

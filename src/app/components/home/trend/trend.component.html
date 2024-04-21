@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="container__info">
+    <div class="info-left">
+      <p>ON TREND</p>
+      <h1>
+        Trending Gems <br />
+        of the <span>Week</span>
+      </h1>
+    </div>
+    <div class="info-right">
+      <p>
+        Explore the NFT latest trends, discover digital treasures, and invest in
+        <br />
+        the future of arts where each NFT is a unique masterpiece.
+      </p>
+      <div class="slider-button">
+        <button [disabled]="currentIndex === 0" (click)="showPrevious()">
+          <img
+            src="../../../../assets/left128.png"
+            alt="previous_button"
+            [class.slider-button--disabled]="currentIndex === 0"
+          />
+        </button>
+        <button
+          [disabled]="currentIndex === cards.length - 5"
+          (click)="showNext()"
+        >
+          <img
+            src="../../../../assets/right128.png"
+            alt="next_button"
+            [class.slider-button--disabled]="currentIndex === cards.length - 5"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="container__cards">
+    <div class="slider">
+      <div
+        class="card"
+        *ngFor="
+          let card of trendCollectionCards().slice(
+            currentIndex,
+            currentIndex + numCardsToShow
+          )
+        "
+      >
+        <div class="card-img">
+          <img [src]="card.img" alt="" />
+        </div>
+        <div class="card-description">
+          <h2>{{ card.title }}</h2>
+          <p>{{ card.price }}</p>
+          <button (click)="addItemToCart(card)">Bid Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

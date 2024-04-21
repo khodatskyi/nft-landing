@@ -1,0 +1,14 @@
+@import "../../../../styles.scss";
+
+span {
+  color: $white-font-color;
+}
+
+a {
+  font-size: 1.2rem;
+  color: $gray-font-color;
+  text-decoration: none;
+  &:hover {
+    color: $lime-font-color;
+  }
+}

@@ -1,0 +1,27 @@
+<div
+  #cartContainer
+  class="container"
+  [ngClass]="{ open: isCartOpen, closed: !isCartOpen }"
+>
+  <div class="container-item">
+    <div class="item" *ngFor="let item of cartItems">
+      <img [src]="item.img" alt="" />
+      <div class="item__info">
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.price }}</p>
+        <div class="image-container" (click)="deleteFromCart(item)">
+          <img src="../../assets/trash.png" alt="trash" class="static-image" />
+          <img
+            src="../../assets/trash.gif"
+            alt="trash"
+            class="animated-image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="item item-empty" *ngIf="this.quantityItemsInCartNumber == 0">
+      <h2>No items in cart yet.</h2>
+    </div>
+    <button *ngIf="this.quantityItemsInCartNumber > 0" (click)="clickOnBuyButton()">Buy</button>
+  </div>
+</div>

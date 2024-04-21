@@ -1,0 +1,34 @@
+<div class="container">
+  <app-breadcrumbs></app-breadcrumbs>
+  <div class="container-title">
+    <h1>Be Our Members</h1>
+  </div>
+  <div class="container-cards">
+    <div class="card" *ngFor="let card of this.date.membershipCollection">
+      <div class="card__title">
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.titleDescription }}</p>
+      </div>
+
+      <div class="card__price" id="card__price">
+        <h2>{{ card.priceForMonth }}</h2>
+      </div>
+
+      <div class="card__advantages">
+        <ul>
+          <li><span>&#x2714;</span> {{ card.advantage1 }}</li>
+          <li><span>&#x2714;</span> {{ card.advantage2 }}</li>
+          <li><span>&#x2714;</span> {{ card.advantage3 }}</li>
+          <li><span>&#x2714;</span> {{ card.advantage4 }}</li>
+          <li><span>&#x2714;</span> {{ card.advantage5 }}</li>
+        </ul>
+      </div>
+
+      <div class="card__button">
+        <button class="button" (click)="clickOnGetButton()">
+          Get this Package
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="container">
+  <p>VALUES</p>
+  <h1>Our Core Principles</h1>
+  <div class="card-container">
+    <div class="card" *ngFor="let card of getValuesCardsCollection()">
+      <div class="circle"><img [src]="card.img" [alt]="card.title" /></div>
+      <h2>{{ card.title }}</h2>
+      <p>{{ card.description }}</p>
+    </div>
+  </div>
+</div>

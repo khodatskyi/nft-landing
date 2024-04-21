@@ -1,0 +1,142 @@
+@import "../../../../styles.scss";
+
+.container {
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 30px;
+  padding: 30px;
+
+  .container__form {
+    margin-top: 20px;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+
+      input,
+      textarea,
+      button {
+        padding: 16px;
+        border-radius: 20px;
+        border: 2px solid black;
+      }
+
+      input:not(:focus):placeholder-shown,
+      textarea:not(:focus):placeholder-shown {
+        border-color: #7c7c7c;
+      }
+
+      input:focus,
+      textarea:focus {
+        border-color: #666;
+      }
+
+      input:valid,
+      textarea:valid {
+        border-color: rgb(33, 208, 33);
+      }
+
+      input:invalid,
+      textarea:invalid {
+        border-color: rgb(255, 0, 0);
+      }
+
+      button {
+        background-color: blue;
+        background: $primary-background-color;
+        color: aliceblue;
+        font-size: 1.2rem;
+        cursor: pointer;
+
+        &:hover {
+          background: $primary-lighten-background-color;
+        }
+      }
+
+      .form__name {
+        display: flex;
+        gap: 10px;
+        input {
+          flex: 1;
+        }
+      }
+    }
+  }
+}
+
+.hint {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 30px;
+  background: $primary-background-color;
+  border-radius: 20px;
+  position: absolute;
+  color: white;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%);
+    border: 15px solid;
+    border-color: $primary-background-color #0000 #0000 #0000;
+  }
+}
+
+.hint-first-name {
+  top: -50px;
+}
+
+.hint-last-name {
+  top: -50px;
+  right: 12px;
+}
+
+.hint-email {
+  top: 25px;
+}
+
+.hint-phone {
+  top: 95px;
+}
+
+@media (max-width: 625px) {
+  .container .container__form .form__name {
+    flex-direction: column;
+  }
+
+  .hint-last-name {
+    top: 15px;
+    right: 120px;
+  }
+
+  .hint-email {
+    top: 85px;
+  }
+  .hint-phone {
+    top: 155px;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    width: 90%;
+    // padding-left: 15px;
+  }
+
+  .hint-last-name {
+    top: 15px;
+    right: 75px;
+  }
+
+  .hint-email {
+    top: 85px;
+  }
+  .hint-phone {
+    top: 155px;
+  }
+}

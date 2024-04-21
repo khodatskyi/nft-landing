@@ -1,0 +1,7 @@
+<div class="pagination-container">
+  <button (click)="prevPage()" class="button-prev-next">Prev</button>
+  <button *ngFor="let page of data.pageCollection" (click)="goToPage(page)">
+    {{ page }}
+  </button>
+  <button (click)="nextPage()" class="button-prev-next">Next</button>
+</div>
